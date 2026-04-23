@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: payment-tracker
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npx drizzle-kit push && node dist/index.cjs
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: RENDER
+        value: true
+    disk:
+      name: data
+      mountPath: /data
+      sizeGB: 1
