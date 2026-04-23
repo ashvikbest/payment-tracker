@@ -5,6 +5,6 @@ export default defineConfig({
   schema: "./shared/schema.ts",
   dialect: "sqlite",
   dbCredentials: {
-    url: process.env.NODE_ENV === "production" && process.env.RENDER ? "/data/data.db" : "./data.db",
+    url: "./data.db",
   },
 });
